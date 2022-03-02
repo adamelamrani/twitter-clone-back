@@ -34,7 +34,7 @@ const createTuit = async (req, res, next) => {
 
 const updateTuit = async (req, res, next) => {
   const { id } = req.params;
-  const tuitToUpdate = await Tuit.findByIdAndUpdate(id);
+  const tuitToUpdate = await Tuit.findByIdAndUpdate(id, req.body);
   try {
     if (!tuitToUpdate) {
       debug(chalk.redBright("Couldn't find the requested tuit"));
@@ -43,7 +43,7 @@ const updateTuit = async (req, res, next) => {
       next(error);
     } else {
       debug(chalk.green(`Tuit with id: ${id}, updated`));
-      res.status(200).json({ tuitToUpdate });
+      res.status(200).json(req.body);
     }
   } catch (error) {
     debug(chalk.red(`Something went wrong with the request: ${error.message}`));

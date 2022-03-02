@@ -8,7 +8,7 @@ const {
 const router = express.Router();
 
 router.get("/list", getAllTuits);
-router.patch("/id", updateTuit);
+router.patch("/:id", updateTuit);
 router.post("/new", createTuit);
 
 module.exports = router;
