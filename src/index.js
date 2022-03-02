@@ -1,7 +1,6 @@
 require("dotenv").config();
 const debug = require("debug")("Tuitah:root");
 const chalk = require("chalk");
-const connectDataBase = require("./db/index");
 const upServer = require("./server/upServer");
 const connectDataBase = require("./db");
 const app = require("./server");
