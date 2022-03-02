@@ -63,7 +63,6 @@ describe("Given an updateTuit function", () => {
       const id = 2;
       const update = { text: "hola" };
       const req = { params: id, body: update };
-      console.log(tuits);
 
       const res = { status: jest.fn().mockReturnThis, json: jest.fn() };
       Tuit.findByIdAndUpdate = jest.fn().mockResolvedValue(id, req.body);
