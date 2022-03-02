@@ -1,7 +1,6 @@
 {
   "name": "w08ch03-back-silvia-adam",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node src .",
@@ -28,5 +27,14 @@
     "eslint": "^8.10.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamelamrani/w08ch03-back-silvia-adam.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adamelamrani/w08ch03-back-silvia-adam/issues"
+  },
+  "homepage": "https://github.com/adamelamrani/w08ch03-back-silvia-adam#readme",
+  "description": ""
 }
