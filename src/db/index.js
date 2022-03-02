@@ -26,4 +26,4 @@ const connectDataBase = (accesDataBase) =>
     });
   });
 
-export default connectDataBase;
+module.exports = connectDataBase;

@@ -18,4 +18,4 @@ const TuitSchema = new Schema({
 });
 
 const Tuit = model("Tuit", TuitSchema, "tuits");
-export default Tuit;
+module.exports = Tuit;
