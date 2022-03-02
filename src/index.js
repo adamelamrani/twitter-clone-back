@@ -3,6 +3,8 @@ const debug = require("debug")("Tuitah:root");
 const chalk = require("chalk");
 const connectDataBase = require("./db/index");
 const upServer = require("./server/upServer");
+const connectDataBase = require("./db");
+const app = require("./server");
 
 const dbstring = process.env.MONGO_DB_STRING;
 const port = process.env.PORT || 4000;
