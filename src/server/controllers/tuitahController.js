@@ -32,4 +32,24 @@ const createTuit = async (req, res, next) => {
   }
 };
 
-module.exports = { getAllTuits, createTuit };
+const updateTuit = async (req, res, next) => {
+  const { id } = req.params;
+  const tuitToUpdate = await Tuit.findByIdAndUpdate(id, req.body);
+  try {
+    if (!tuitToUpdate) {
+      debug(chalk.redBright("Couldn't find the requested tuit"));
+      const error = new Error("Couldn't find the requested tuit");
+      error.code = 404;
+      next(error);
+    } else {
+      debug(chalk.green(`Tuit with id: ${id}, updated`));
+      res.status(200).json(req.body);
+    }
+  } catch (error) {
+    debug(chalk.red(`Something went wrong with the request: ${error.message}`));
+    error.code = 400;
+    next(error);
+  }
+};
+
+module.exports = { getAllTuits, createTuit, updateTuit };
