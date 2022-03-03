@@ -2,7 +2,7 @@ const { MongoMemoryServer } = require("mongodb-memory-server");
 const { default: mongoose } = require("mongoose");
 const Tuitero = require("../../db/models/Tuitero");
 const connectDataBase = require("../../db/index");
-const getAllTuitero = require("./tuiteroController");
+const { getAllTuitero } = require("./tuiteroController");
 
 jest.mock("../../db/models/Tuitero");
 

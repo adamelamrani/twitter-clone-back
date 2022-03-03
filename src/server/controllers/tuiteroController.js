@@ -14,4 +14,22 @@ const getAllTuitero = async (req, res, next) => {
   }
 };
 
-module.exports = getAllTuitero;
+const createTuitero = async (req, res, next) => {
+  const newTuitero = req.body;
+
+  try {
+    const createdTuitero = await Tuitero.create(newTuitero);
+    if (createdTuitero) {
+      res.status(201).json(createdTuitero);
+    } else {
+      const error = new Error("No tuit new tuitero");
+      error.code = 404;
+      next(error);
+    }
+  } catch (error) {
+    error.code = 400;
+    next(error);
+  }
+};
+
+module.exports = { getAllTuitero, createTuitero };
