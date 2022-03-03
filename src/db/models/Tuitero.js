@@ -10,6 +10,6 @@ const TuiteroSchema = new Schema({
   },
 });
 
-const Tuitero = model("Tuitero", TuiteroSchema, "users");
+const Tuitero = model("Tuitero", TuiteroSchema, "tuiteros");
 
 module.exports = Tuitero;
